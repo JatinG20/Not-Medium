@@ -1,5 +1,53 @@
-/* <uniquifier>: Use a unique and descriptive class name
- <weight>: Use a value from 400 to 700*/
+/* CSS */
+body {
+    background-color: black; /* Set background color to black */
+    height: 100vh; /* Set body height to 100% of viewport height */
+    margin: 0rem; /* Remove default margin */
+    overflow: visible; /* Hide overflow to prevent scrolling */
+  }
+  
+  @keyframes rotate {
+    from {
+        rotate: 0deg; /* Initial rotation angle */
+    }
+    50% {
+        scale: 1 1.5; /* Scale the blob to 1.5 times its original size at 50% of animation */
+    }
+    to {
+        rotate: 360deg; /* Rotate the blob by 360 degrees at the end of animation */
+  }
+  }
+  
+  #blob {
+    background-color: white; /* Set background color of the blob to white */
+    height: 34vmax; /* Set height of the blob relative to the viewport maximum */
+    aspect-ratio: 1; /* Set aspect ratio of the blob to maintain a square shape */
+    position: fixed; /* Position the blob absolutely within its container */
+    left: 50%; /* Position the blob horizontally at the center of its container */
+    top: 50%; /* Position the blob vertically at the center of its container */
+    translate: -50% -50%; /* Translate the blob to center it precisely */
+    border-radius: 50%; /* Make the blob a perfect circle by setting border-radius to 50% */
+    background: linear-gradient(to right, orange, darkcyan); /* Apply a linear gradient background */
+    animation: rotate 15s infinite; /* Apply the rotate animation to the blob with a duration of 20 seconds and repeat infinitely */
+    opacity: 0.8; /* Set opacity of the blob to 0.8 */
+    z-index: -2;
+  }
+  
+  #blur {
+    left: -2vw;
+    height: 100vh; /* Set height of the blur element to cover the entire viewport */
+    width: 101vw; /* Set width of the blur element to cover the entire viewport */
+    position: fixed; /* Position the blur element absolutely within its container */
+    z-index: -1; /* Set z-index to ensure it appears above other content */
+    backdrop-filter: blur(12vmax); /* Apply a blur effect to the background of the blur element */
+  }
+  
+/*background blob end */
+
+
+
+
+
 
 body {
     margin: 0;
@@ -9,32 +57,33 @@ body {
     font-family: Arial, sans-serif;
     color: white;
 }
+
 header {
     height: 100vh;
 }
 
 /* DESKTOP NAV */
 
-/* chatgpt*/
+/* chatgpt */
+
 #desktop-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: black; /* Change this to whatever background color you want */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a shadow to the navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow to the navbar */
     z-index: 1000; /* Ensure the navbar stays on top of other content */
 }
-
-/* chatgpt*/
 
 .logo {
     float: left;
     font-size: 2rem;
     font-family: "Kode Mono", monospace;
-      font-optical-sizing: auto;
-  }
-.logo:hover{
+    font-optical-sizing: auto;
+}
+
+.logo:hover {
     transform: scale(1.1);
     text-shadow: 0 0 5px ghostwhite;
 }
@@ -42,39 +91,38 @@ header {
 nav,
 .nav-links {
     height: 10vh;
-  display: flex;
-  padding: 10px;
-  float: right; 
-  cursor: pointer;
+    display: flex;
+    padding: 10px;
+    float: right;
+    cursor: pointer;
 }
 
-
-
 nav {
-  justify-content: space-between;
-  align-items: center;
-  height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
 }
 
 .nav-links {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  gap: 2rem;
-  list-style: none;
-  font-size: 1.5rem;
-  margin-right: 10px;
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+    margin-right: 10px;
 }
 
-
 a {
-  color: gray;
-  text-decoration: none;
-  position: relative;
-} 
-span{
+    color: gray;
     text-decoration: none;
     position: relative;
-  } 
-span::after{
+}
+
+span {
+    text-decoration: none;
+    position: relative;
+}
+
+span::after {
     content: " ";
     width: 0;
     height: 3px;
@@ -86,21 +134,23 @@ span::after{
     transition: 0.5s;
 }
 
-span:hover{
+span:hover {
     width: 100%;
     color: whitesmoke;
     transition: all 0.4% ease 0%;
 }
 
-span:hover::after{
+span:hover::after {
     width: 100%;
     color: whitesmoke;
     transition: all 0.4% ease 0%;
 }
-span a:hover{
+
+span a:hover {
     color: whitesmoke;
     transition: all 0.4% ease 0%;
 }
+
 /*hover*/
 
 /*hero banner page */
@@ -111,25 +161,27 @@ span a:hover{
     align-items: center;
     font-family: "Kode Mono", monospace;
     font-optical-sizing: auto;
-
     position: relative;
     height: 50vh;
     text-align: left;
     top: 50%;
-    left:50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-size: 40px;
 }
+
 /* blog page*/
+
 .content {
     margin-left: 3vw;
     margin-right: 3vw;
     display: flex;
     flex-direction: column; /* new added in place of justify content*/
-    align-items: flex-start;
+    align-items: center;
 }
 
 /* new */
+
 .first {
     display: flex;
     justify-content: space-between;
@@ -148,23 +200,24 @@ span a:hover{
     text-align: center;
     transition: 0.5s;
 }
-.blog:hover{
+
+.blog:hover {
     transition: 0.5s;
-    transform: scale(.9);
+    transform: scale(0.9);
     text-shadow: 0 0 5px ghostwhite;
 }
-.wi1{
+
+.wi1 {
     width: 42vw;
 }
 
-.wi2{
-    width: 20vw;
-}
-.wi3{
+.wi2 {
     width: 20vw;
 }
 
-
+.wi3 {
+    width: 20vw;
+}
 
 .blog img {
     cursor: pointer;
@@ -172,14 +225,16 @@ span a:hover{
     height: auto;
     border-radius: 3%;
 }
+
 /* content end */
 
-.empty-space-after-contacts{
+.empty-space-after-contacts {
     height: 50vh;
 }
 
-/*      Ender     */
-.ender{
+/* Ender */
+
+.ender {
     margin-right: 5vw;
     margin-left: 5vw;
     width: auto;
@@ -187,13 +242,16 @@ span a:hover{
     justify-content: space-between;
     align-items: flex-end;
 }
+
 .ender a {
     font-size: 30px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.ender a img{
-    width: 20vw;
+
+.ender a img {
+    height: 30vh;
 }
+
 h3, h4 a {
     color: gray;
     text-decoration: none;
@@ -201,7 +259,7 @@ h3, h4 a {
     transition: 0.5s;
 }
 
-h3::after , h4 a::after{
+h3::after, h4 a::after {
     width: 0;
     height: 3px;
     color: whitesmoke;
@@ -212,11 +270,68 @@ h3::after , h4 a::after{
     transition: width 0.5s;
 }
 
-h3:hover, h3:hover::after, h3 a:hover , h4:hover, h4:hover::after, h4 a:hover {
+h3:hover, h3:hover::after, h3 a:hover, h4:hover, h4:hover::after, h4 a:hover {
     width: 100%;
     color: whitesmoke;
     transition: 0.5s;
 }
-.empty-space-end{
+
+.empty-space-end {
     height: 10vh;
 }
+
+  /* Media query for screens between 301px and 767px */
+  @media screen and (min-width: 301px) and (max-width: 768px) {
+
+    body {
+        width: 100%;
+        /* Adjustments for small devices */
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        font-size: 1rem;
+    }
+
+    .centered-text {
+        font-size: 30px;
+    }
+
+    .content {
+        align-items: center;
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+
+    .first{
+        display: block;
+    }
+    .wi2{
+        display: flex;
+        flex-direction: column;
+    }
+
+   /* .blog {
+       width: 80%;
+    }*/
+
+    .ender a {
+        font-size: 20px;
+    }
+
+}
+
+
+/* Media query for screens up to 300px */
+@media screen and (max-width: 300px) {
+    .blog {
+      width: 100%;
+    }
+  }
+
+  
