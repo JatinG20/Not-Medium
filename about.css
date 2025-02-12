@@ -1,3 +1,53 @@
+/* CSS */
+body {
+    background-color: black; /* Set background color to black */
+    height: 100vh; /* Set body height to 100% of viewport height */
+    margin: 0rem; /* Remove default margin */
+    overflow: visible; /* Hide overflow to prevent scrolling */
+  }
+  
+  @keyframes rotate {
+    from {
+        rotate: 0deg; /* Initial rotation angle */
+    }
+    50% {
+        scale: 1 1.5; /* Scale the blob to 1.5 times its original size at 50% of animation */
+    }
+    to {
+        rotate: 360deg; /* Rotate the blob by 360 degrees at the end of animation */
+  }
+  }
+  
+  #blob {
+    background-color: white; /* Set background color of the blob to white */
+    height: 34vmax; /* Set height of the blob relative to the viewport maximum */
+    aspect-ratio: 1; /* Set aspect ratio of the blob to maintain a square shape */
+    position: fixed; /* Position the blob absolutely within its container */
+    left: 50%; /* Position the blob horizontally at the center of its container */
+    top: 50%; /* Position the blob vertically at the center of its container */
+    translate: -50% -50%; /* Translate the blob to center it precisely */
+    border-radius: 50%; /* Make the blob a perfect circle by setting border-radius to 50% */
+    background: linear-gradient(to right, orange, darkcyan); /* Apply a linear gradient background */
+    animation: rotate 15s infinite; /* Apply the rotate animation to the blob with a duration of 20 seconds and repeat infinitely */
+    opacity: 0.8; /* Set opacity of the blob to 0.8 */
+    z-index: -2;
+  }
+  
+  #blur {
+    height: 100vh; /* Set height of the blur element to cover the entire viewport */
+    width: 100vw; /* Set width of the blur element to cover the entire viewport */
+    position: fixed; /* Position the blur element absolutely within its container */
+    z-index: -1; /* Set z-index to ensure it appears above other content */
+    backdrop-filter: blur(12vmax); /* Apply a blur effect to the background of the blur element */
+  }
+  
+  
+  
+  
+
+
+
+
 /* styles.css */
 
 /* Reset */
@@ -11,7 +61,7 @@ body {
     background-color: black;
     font-family: Arial, sans-serif;
     color: white;
-    padding: 0 2vw;
+    padding: 0;
 }
 
 header {
@@ -58,9 +108,9 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: white;
     font-size: 1.2rem;
-    font-family: cursive;
+    color: whitesmoke;
+    font-family: "Kode Mono", monospace;
 }
 /* empty space*/
 .empty-space{
